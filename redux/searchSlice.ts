@@ -8,8 +8,7 @@ const initialState = {
 }
 
 export const getProfileData = createAsyncThunk('fetch/profile',async(name)=>{
-    const newName = decodeURI(name);
-    const response = await axios.get('https://api.github.com/users/'+newName);
+    const response = await axios.get('https://api.github.com/users/'+name);
     return response.data;
 })
 
